@@ -18,6 +18,9 @@ Stepper stepper(STEPS_PER_360_DEGREE, 12, 10, 9, 11);
 Adafruit_SSD1306 display = Adafruit_SSD1306(128, 32, &Wire);
 
 void setup(){
+  pinMode(2, INPUT_PULLUP);
+
+
   pinMode(buzzer, OUTPUT);
   tone(buzzer, 800);
   delay(400);
@@ -56,8 +59,21 @@ void setup(){
   tone(buzzer, 500);
   delay(200);
   noTone(buzzer);
+
+
 }
 
+int n = 2038/4;
+
 void loop(){
+
+    if(digitalRead(2) == 0) {
+      stepper.step(n);
+      n = n+n;
+    }
+
+    if (n > 4076) {
+      n = 0;
+    }
 
 }
