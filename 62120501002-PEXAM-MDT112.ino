@@ -44,7 +44,7 @@ void setup(){
   display.setCursor(35, 20);
   display.setTextColor(1);
   display.setTextSize(1);
-  display.println("Hello World");
+  display.println("Hello MDT!");
   display.display();
   delay(1000);
 
