@@ -1,4 +1,10 @@
-const int buzzer = 8; //buzzer to arduino pin 8
+const int buzzer = 8;
+
+#include <Stepper.h>
+
+#define STEPS_PER_360_DEGREE 2038
+
+Stepper stepper(STEPS_PER_360_DEGREE, 12, 10, 9, 11);
 
 void setup(){
   pinMode(buzzer, OUTPUT);
@@ -8,6 +14,12 @@ void setup(){
 
   Serial.begin(9600);
   Serial.println("Hello MDT!");
+
+  stepper.setSpeed(16);
+
+  Serial.println("CW 90");
+  stepper.step(STEPS_PER_360_DEGREE/4);
+  delay(800);
 }
 
 void loop(){
