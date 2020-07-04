@@ -50,6 +50,12 @@ void setup(){
 
   display.clearDisplay();
   display.display();
+
+
+  delay(350);
+  tone(buzzer, 500);
+  delay(200);
+  noTone(buzzer);
 }
 
 void loop(){
