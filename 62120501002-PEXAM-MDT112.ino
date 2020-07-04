@@ -20,6 +20,10 @@ void setup(){
   Serial.println("CW 90");
   stepper.step(STEPS_PER_360_DEGREE/4);
   delay(800);
+
+  Serial.println("CCW 180");
+  stepper.step(-STEPS_PER_360_DEGREE/2);
+  delay(800);
 }
 
 void loop(){
