@@ -6,6 +6,8 @@ void setup(){
   delay(400);
   noTone(buzzer);
 
+  Serial.begin(9600);
+  Serial.println("Hello MDT!");
 }
 
 void loop(){
